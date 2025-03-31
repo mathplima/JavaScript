@@ -1,0 +1,18 @@
+const idade = Number(prompt("Idade do Usuário:"))
+const registro = prompt("Status de Registro:")
+
+
+if(idade >= 18){
+    console.log("Acesso Completo!");
+}else{
+    console.log("Acesso Limitado.");
+}
+
+switch(registro){
+    case "registrado":
+        alert("Seja Bem Vindo!");
+        break
+    case "nao registrado":
+        alert("Complete o Registro.");
+        break
+}
