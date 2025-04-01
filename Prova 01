@@ -1,0 +1,13 @@
+const n1 = Number(prompt("Me diga um Número qualquer:"))
+const n2 = Number(prompt("Me diga um segundo Número qualquer:"))
+
+console.log(n1 + n2);
+console.log(n1 - n2);
+console.log(n1 * n2);
+console.log(n1 / n2);
+console.log(n1 ** n2);
+console.log(n1 -= n2);
+console.log(n1 *= n2);
+console.log(n1 /= n2);
+console.log(n1 **= n2);
+console.log(n1 %= n2);
