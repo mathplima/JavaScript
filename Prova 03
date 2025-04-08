@@ -1,0 +1,15 @@
+let nomes = [];
+
+while (true) {
+    let nome = prompt("Digite quantos nomes quiser:  (Digite 'SAIR' para sair)")
+
+    if (nome === "SAIR") {
+        alert("Operação encerrada.")
+        break;
+    }
+    nomes.push(nome);
+}
+
+for (let nome of nomes) {
+    console.log(`Bem-vindo(a), ${nome}!`);
+}
