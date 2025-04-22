@@ -1,0 +1,43 @@
+const lista_tarefas = []
+
+while (true) {
+    let tarefa = prompt("Informe as atividades e tarefas que deseja realizar:")
+
+    if (tarefa.toUpperCase() === "SAIR"){
+        break;
+    }
+    lista_tarefas.push(tarefa);
+}
+
+let i = 1;
+for (const tarefa of lista_tarefas){
+    console.log(`${i} - ${tarefa}`);
+    i++
+}
+console.log(`Sua lista de tarefas é:`, lista_tarefas);
+
+let remover_tarefa = prompt("Existe alguma tarefa que você deseja excluir? Se não, digite: NÃO")
+
+if (lista_tarefas.includes(remover_tarefa)){
+    const posiçao = lista_tarefas.indexOf(remover_tarefa);
+    lista_tarefas.splice(posiçao, 1);
+    console.log(`A tarefa ${remover_tarefa} foi removida da lista.`);
+} else if (remover_tarefa === "NÃO"){
+    console.log(`Nenhuma tarefa removida.`);
+} else {
+    console.log(`A tarefa ${remover_tarefa} não consta na lista de tarefas e atividades.`);
+}
+console.log(`A lista finalizada das tarefas e atividades é:`, lista_tarefas);
+
+let tarefa_concluida = prompt(`Deseja marcar alguma atividade como concluída? Digite o numero da tarefa:`);
+
+if (tarefa_concluida){
+    let i = parseInt(tarefa_concluida) - 1;
+
+    if (i >= 0 && i < lista_tarefas.length){
+        lista_tarefas[i] = `✅${lista_tarefas[i]}`;
+        console.log(`Item ${lista_tarefas[i]} realizado.`);
+    } else {
+        console.log(`Item inválido.`);
+    }
+}
