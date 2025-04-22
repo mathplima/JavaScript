@@ -1,0 +1,29 @@
+const lista_itens = []
+
+while (true) {
+    let item = prompt("Insira os itens que deseja comprar: (Digite 'SAIR' para finalizar sua compra)");
+
+    if (item.toLowerCase() === "sair"){
+        break;
+    }
+    lista_itens.push(item);
+}
+console.log(`Sua lista de compras é:`, lista_itens);
+
+
+let item_remover = prompt("Deseja remover algum item da compra? Digite o nome do item que queira remover");
+
+if (lista_itens.includes(item_remover)) {
+    const posiçao = lista_itens.indexOf(item_remover);
+    lista_itens.splice(posiçao, 1);
+    console.log(`O item ${item_remover} foi removido da sua lista de compras.`);
+} else {
+    console.log(`O item ${item_remover} não está na sua lista.`);
+}
+
+let i = 1;
+for (const item of lista_itens){
+    console.log(`${i} - ${item}`)
+    i++
+}
+console.log(`Sua lista de compras finalizada é:`, lista_itens);
