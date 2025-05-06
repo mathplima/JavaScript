@@ -1,0 +1,25 @@
+let Listatarefas = [];
+
+let adicionarTarefa = function (tarefa) {
+    Listatarefas.push(tarefa);
+    console.log("Tarefa adicionada:", tarefa);
+};
+
+adicionarTarefa("Estudar HTML")
+adicionarTarefa("Estudar CSS")
+adicionarTarefa("Estudar JavaScript")
+adicionarTarefa("Limpar o quarto")
+
+console.log("Lista de Tarefas para realizar:", Listatarefas);
+
+let listarTarefas = () => {
+    Listatarefas.forEach((tarefa, indice) => {
+        console.log(`${indice}: ${tarefa}`);
+    });
+}
+
+listarTarefas();
+
+function executarOperacao(callback) {
+    callback(tarefas);
+}
