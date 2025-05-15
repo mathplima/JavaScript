@@ -1,0 +1,20 @@
+let nomes = [];
+
+let continuar = true;
+
+while (continuar) {
+    let nome = prompt("Digite um nome para adicionar à lista:");
+    nomes.push(nome);
+
+    continuar = confirm("Deseja adicionar outro nome?");
+}
+
+console.log("Nomes adicionados:");
+console.log(nomes);
+
+let letraEscolhida = prompt("Agora digite a letra inicial dos nomes que você deseja:");
+
+const nomes_filtrados = nomes.filter(e => e[0] === letraEscolhida).map(e => e.toUpperCase());
+
+console.log(`Nomes filtrados com a inicial "${letraEscolhida}":`);
+console.log(nomes_filtrados);
