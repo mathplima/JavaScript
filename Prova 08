@@ -1,0 +1,45 @@
+const livros = [];
+
+function adicionarLivro() {
+    const nome = prompt("Digite o nome do livro:");
+    const autor = prompt("Digite o autor do livro:");
+    const ano = Number(prompt("Digite o ano do livro:"));
+
+    livros.push({
+        nome: nome,
+        autor: autor,
+        ano: ano
+    });
+
+    console.log("Livro adicionado:");
+    console.log(livros);
+}
+
+
+const quantidade = Number(prompt("Quantos livros deseja adicionar?"));
+
+for (let i = 0; i < quantidade; i++) {
+    adicionarLivro();
+}
+
+let continuar = prompt("Deseja adicionar mais um livro? (sim/não)").toLowerCase();
+
+while (continuar === "sim") {
+    adicionarLivro();
+    continuar = prompt("Deseja adicionar outro livro? (sim/não)").toLowerCase();
+}
+
+console.log("Lista final de livros:");
+console.log(livros);
+
+const anoAtual = 2025;
+let somaIdades = 0;
+
+livros.forEach(livro => {
+    const idadeLivro = anoAtual - livro.ano;
+    somaIdades += idadeLivro;
+});
+
+const mediaIdade = somaIdades / livros.length;
+
+console.log(`A média de idade dos livros é: ${mediaIdade.toFixed(2)} anos.`);
