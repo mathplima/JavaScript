@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+</head>
+<body>
+    <h1>Organizador de Tarefas</h1>
+    <form id="formulario">
+        <label for="tarefa"><b>Tarefa</b></label> <br>
+        <input type="text" id="tarefa" placeholder="digite uma tarefa" required>
+        <button>Add</button>
+    </form>
+
+    <section id="resultado"></section>
+
+    <script src="./aula10.js"></script>
+</body>
+</html>
