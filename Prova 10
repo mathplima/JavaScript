@@ -18,3 +18,43 @@
     <script src="./aula10.js"></script>
 </body>
 </html>
+
+
+
+
+
+const formulario = document.querySelector("#formulario");
+const tarefa = document.querySelector("#tarefa");
+const resultado = document.querySelector("#resultado");
+
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault()
+    const novo_card = document.createElement("div")
+
+    const texto = document.createElement("span")
+    texto.innerHTML = tarefa.value
+
+    const botao_excluir = document.createElement("button")
+    botao_excluir.innerHTML = "Excluir"
+
+    botao_excluir.addEventListener("click", () => {
+    resultado.removeChild(novo_card)
+})
+
+const checkbox = document.createElement("input")
+checkbox.type = "checkbox"
+
+checkbox.addEventListener("click", (evento) => {
+    if (evento.target.checked) {
+    texto.style.textDecoration = "line-through"
+    } else {
+    texto.style.textDecoration = "none"
+    }
+})
+
+novo_card.append(checkbox, texto, botao_excluir)
+resultado.append(novo_card)
+
+tarefa.value = ""
+tarefa.focus()
+});
